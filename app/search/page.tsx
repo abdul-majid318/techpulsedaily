@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { SearchPageClient } from "@/components/SearchPageClient";
+import { articles } from "@/lib/articles";
 
 export const metadata: Metadata = {
   title: "Search",
@@ -9,9 +10,19 @@ export const metadata: Metadata = {
 };
 
 export default function SearchPage() {
+  const searchArticles = articles.map(({ slug, title, excerpt, category, tags, author, readingTime }) => ({
+    slug,
+    title,
+    excerpt,
+    category,
+    tags,
+    author,
+    readingTime,
+  }));
+
   return (
     <Suspense fallback={<div className="mx-auto container px-4 py-10 text-slate-600 dark:text-slate-300">Loading search...</div>}>
-      <SearchPageClient />
+      <SearchPageClient articles={searchArticles} />
     </Suspense>
   );
 }

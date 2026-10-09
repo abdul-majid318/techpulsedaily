@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { siteNavigation } from "@/lib/articles";
+import { siteNavigation } from "@/lib/navigation";
 
 export function Header() {
   const [open, setOpen] = useState(false);

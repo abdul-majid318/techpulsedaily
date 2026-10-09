@@ -3,9 +3,11 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { articles } from "@/lib/articles";
+import type { Article } from "@/lib/articles";
 
-export function SearchPageClient() {
+type SearchArticle = Pick<Article, "slug" | "title" | "excerpt" | "category" | "tags" | "author" | "readingTime">;
+
+export function SearchPageClient({ articles }: { articles: SearchArticle[] }) {
   const searchParams = useSearchParams();
   const initialQuery = searchParams.get("q") ?? "";
   const [query, setQuery] = useState(initialQuery);
@@ -29,7 +31,7 @@ export function SearchPageClient() {
 
       return haystack.includes(normalized);
     });
-  }, [query]);
+  }, [articles, query]);
 
   return (
     <div className="mx-auto container px-4 py-10 sm:px-6 lg:px-8">
