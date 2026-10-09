@@ -19,6 +19,9 @@
 
 # production
 /build
+/dist
+/.vinext
+/.cloudflare
 
 # misc
 .DS_Store
