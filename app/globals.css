@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #fffaf5;
+  --foreground: #201a32;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 8% 0%, rgba(251, 191, 183, 0.18), transparent 30rem),
+    radial-gradient(ellipse at 92% 12%, rgba(196, 181, 253, 0.17), transparent 34rem),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, sans-serif;
+}
+
+.dark body {
+  background:
+    radial-gradient(ellipse at 8% 0%, rgba(190, 24, 93, 0.09), transparent 30rem),
+    radial-gradient(ellipse at 92% 12%, rgba(109, 40, 217, 0.12), transparent 34rem),
+    #090a15;
+  color: #f8fafc;
+}
+
+::selection {
+  background: rgba(167, 139, 250, 0.28);
+}
+
+img {
+  max-width: 100%;
+}
+
+.article-body {
+  line-height: 1.8;
+}
+
+.article-body h2,
+.article-body h3,
+.article-body h4 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+}
+
+.dark .article-body h2,
+.dark .article-body h3,
+.dark .article-body h4 {
+  color: #f8fafc;
+}
+
+.article-body p,
+.article-body li {
+  color: #475569;
+  font-size: 1.05rem;
+}
+
+.dark .article-body p,
+.dark .article-body li {
+  color: #cbd5e1;
+}
+
+.article-body p + p {
+  margin-top: 1.2rem;
+}
+
+.article-body ul,
+.article-body ol {
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+}
+
+.article-body li + li {
+  margin-top: 0.65rem;
+}
+
+.article-body blockquote {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+  border-left: 3px solid #8b5cf6;
+  padding-left: 1rem;
+  font-size: 1.08rem;
+  font-weight: 500;
+  color: #0f172a;
+  background: rgba(139, 92, 246, 0.07);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.dark .article-body blockquote {
+  color: #f8fafc;
+  background: rgba(139, 92, 246, 0.12);
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid #8b5cf6;
+  outline-offset: 3px;
+}
+
+.article-body pre {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.article-body code {
+  font-family: var(--font-mono), monospace;
+  background: rgba(148,163,184,0.15);
+  border-radius: 0.35rem;
+  padding: 0.15rem 0.35rem;
+  font-size: 0.9em;
+}
+
+.article-body h2 {
+  font-size: clamp(1.75rem, 2vw, 2.4rem);
+}
+
+.article-body h3 {
+  font-size: 1.35rem;
+}
+
+.article-body figure {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.article-body figcaption {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.dark .article-body figcaption {
+  color: #a5b4fc;
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 15px;
+  }
+}
