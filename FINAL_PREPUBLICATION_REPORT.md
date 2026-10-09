@@ -60,7 +60,7 @@
 
 ## Publication set
 
-**Technically ready after owner authorization: Articles 3–12.** Their publication statuses remain unchanged; the owner must explicitly approve the editorial decision and resolve or accept the two source-verification limitations above before changing them.
+**Publication authorized and applied:** Articles 3–12 are now `published` with `publishedAt: "2026-10-09"`; Articles 1–2 remain published. The release is committed and pushed to GitHub. Cloudflare deployment remains pending because this non-interactive environment has no `CLOUDFLARE_API_TOKEN`; no live URL or live-route verification is claimed.
 
 After owner evidence resolves the listed blockers and an editor changes only the approved articles’ `publicationStatus` to `published`, keep `EDITORIAL_PREVIEW=false` and run the single deployment instruction:
 
