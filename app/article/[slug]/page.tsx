@@ -100,7 +100,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           },
         }
       : {}),
-    datePublished: article.publishedAt,
+    ...(article.publishedAt ? { datePublished: article.publishedAt } : {}),
     dateModified: article.updatedAt,
   };
 
@@ -134,7 +134,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300">{article.excerpt}</p>
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full border border-slate-200 bg-violet-100 text-xs font-semibold text-violet-700 dark:border-slate-700 dark:bg-violet-950/50 dark:text-violet-200" aria-hidden="true">TL</div>
+              <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full border border-slate-200 bg-violet-100 text-xs font-semibold text-violet-700 dark:border-slate-700 dark:bg-violet-950/50 dark:text-violet-200" aria-hidden="true">TP</div>
               <div>
                 <Link href={`/author/${author.slug}`} className="text-sm font-semibold text-slate-900 dark:text-white">{author.name}</Link>
                 <div className="text-xs text-slate-500 dark:text-slate-400">{author.title}</div>
@@ -164,7 +164,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <div className="article-body rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900 sm:p-8">
               {article.body.map((section, index) => (
                 <section key={`${article.slug}-${index}`} id={section.heading ? slugifyHeading(section.heading) : `section-${index}`} className="scroll-mt-24">
-                  {section.heading ? <h2>{section.heading}</h2> : null}
+                  {section.heading ? section.headingLevel === 3 ? <h3>{section.heading}</h3> : <h2>{section.heading}</h2> : null}
                   {section.paragraphs?.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
@@ -175,6 +175,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                       ))}
                     </ul>
                   ) : null}
+                  {section.orderedList ? <ol>{section.orderedList.map((item) => <li key={item}>{item}</li>)}</ol> : null}
+                  {section.table ? <div className="my-6 overflow-x-auto"><table className="w-full border-collapse text-left text-sm"><thead><tr>{section.table.headers.map((header) => <th key={header} className="border border-slate-200 bg-slate-50 p-3 font-semibold text-slate-900 dark:border-slate-700 dark:bg-slate-800 dark:text-white">{header}</th>)}</tr></thead><tbody>{section.table.rows.map((row) => <tr key={row.join("|")}>{row.map((cell) => <td key={cell} className="border border-slate-200 p-3 align-top text-slate-600 dark:border-slate-700 dark:text-slate-300">{cell}</td>)}</tr>)}</tbody></table></div> : null}
                   {section.blockquote ? <blockquote>{section.blockquote}</blockquote> : null}
                   {section.code ? <pre><code>{section.code}</code></pre> : null}
                   {section.links?.length ? <p className="text-sm"><span className="font-semibold">Related reading: </span>{section.links.map((link, linkIndex) => <span key={link.href}>{linkIndex ? ", " : null}<Link href={link.href} className="text-violet-700 underline underline-offset-4 dark:text-violet-300">{link.label}</Link></span>)}</p> : null}
@@ -201,7 +203,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
             <section className="mt-12 rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
               <div className="flex items-center gap-4">
-                <div className="flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-full border border-slate-200 bg-violet-100 text-lg font-semibold text-violet-700 dark:border-slate-700 dark:bg-violet-950/50 dark:text-violet-200" aria-hidden="true">TL</div>
+                <div className="flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-full border border-slate-200 bg-violet-100 text-lg font-semibold text-violet-700 dark:border-slate-700 dark:bg-violet-950/50 dark:text-violet-200" aria-hidden="true">TP</div>
                 <div>
                   <Link href={`/author/${author.slug}`} className="text-xl font-semibold text-slate-900 dark:text-white">{author.name}</Link>
                   <div className="text-sm text-slate-500 dark:text-slate-400">{author.title}</div>

@@ -4,7 +4,7 @@ import { SearchPageClient } from "@/components/SearchPageClient";
 
 export const metadata: Metadata = {
   title: "Search",
-  description: "Search across TechLedger articles by keyword, theme, category, or author.",
+  description: "Search across TechPulseDaily articles by keyword, theme, category, or author.",
   robots: { index: false, follow: true },
 };
 

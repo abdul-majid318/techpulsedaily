@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   return {
     title: `#${slug}`,
-    description: `Explore articles tagged ${slug} on TechLedger.`,
+    description: `Explore articles tagged ${slug} on TechPulseDaily.`,
     robots: { index: false, follow: true },
   };
 }

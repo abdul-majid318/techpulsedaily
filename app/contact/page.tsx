@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact details for TechLedger editorial questions and reader feedback.",
+  description: "Contact details for TechPulseDaily editorial questions and reader feedback.",
 };
 
 export default function ContactPage() {

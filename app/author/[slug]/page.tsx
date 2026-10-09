@@ -30,7 +30,7 @@ export default async function AuthorPage({ params }: { params: Promise<{ slug: s
     <div className="mx-auto container px-4 py-10 sm:px-6 lg:px-8">
       <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900 md:p-8">
         <div className="flex flex-col gap-5 md:flex-row md:items-center">
-          <div className="flex h-[120px] w-[120px] shrink-0 items-center justify-center rounded-full border border-slate-200 bg-violet-100 text-2xl font-semibold text-violet-700 dark:border-slate-700 dark:bg-violet-950/50 dark:text-violet-200" aria-hidden="true">TL</div>
+          <div className="flex h-[120px] w-[120px] shrink-0 items-center justify-center rounded-full border border-slate-200 bg-violet-100 text-2xl font-semibold text-violet-700 dark:border-slate-700 dark:bg-violet-950/50 dark:text-violet-200" aria-hidden="true">TP</div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500 dark:text-slate-400">Author</p>
             <h1 className="mt-2 text-4xl font-semibold tracking-tight text-slate-900 dark:text-white">{author.name}</h1>

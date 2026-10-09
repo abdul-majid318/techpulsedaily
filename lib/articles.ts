@@ -18,8 +18,11 @@ export type Author = {
 
 export type ArticleSection = {
   heading?: string;
+  headingLevel?: 2 | 3;
   paragraphs?: string[];
   list?: string[];
+  orderedList?: string[];
+  table?: { headers: string[]; rows: string[][] };
   blockquote?: string;
   code?: string;
   links?: { label: string; href: string }[];
@@ -49,7 +52,7 @@ export type Article = {
   author: string;
   featuredImage: string;
   featuredImageAlt: string;
-  publishedAt: string;
+  publishedAt?: string;
   updatedAt: string;
   readingTime: number;
   seoTitle: string;
@@ -395,8 +398,23 @@ const sourcesByArticle: Record<string, ArticleSource[]> = {
     { title: "Magic Write documentation", url: "https://www.canva.com/help/about-magic-write/", publisher: "Canva" },
     { title: "Using Magic Studio safely and legally", url: "https://www.canva.com/help/using-magic-studio-safely-and-legally/", publisher: "Canva" },
   ],
-  "chatgpt-vs-claude": [{ title: "ChatGPT capabilities overview", url: "https://help.openai.com/en/articles/9260256-chatgpt-capabilities-overview", publisher: "OpenAI Help Center" }, { title: "Intro to Claude", url: "https://docs.anthropic.com/en/docs/welcome", publisher: "Anthropic" }],
-  "how-to-speed-up-a-slow-windows-pc": [{ title: "Tips to improve PC performance in Windows", url: "https://support.microsoft.com/en-us/windows/experience/performance-optimization/tips-to-improve-pc-performance-in-windows", publisher: "Microsoft Support" }],
+  "chatgpt-vs-claude": [
+    { title: "OpenAI — ChatGPT Capabilities Overview", url: "https://help.openai.com/en/articles/9260256-chatgpt-capabilities-overview", publisher: "OpenAI Help Center" },
+    { title: "OpenAI — ChatGPT Pricing", url: "https://chatgpt.com/pricing/", publisher: "OpenAI" },
+    { title: "OpenAI — ChatGPT Accuracy and Limitations", url: "https://help.openai.com/en/articles/8313428", publisher: "OpenAI Help Center" },
+    { title: "Anthropic — Claude Pricing", url: "https://www.anthropic.com/pricing", publisher: "Anthropic" },
+    { title: "Anthropic — How Claude Web Search Works", url: "https://support.claude.com/en/articles/10684626-enable-and-use-web-search", publisher: "Anthropic Support" },
+    { title: "Anthropic — Choosing Between Web Search, Thinking, and Research", url: "https://support.claude.com/en/articles/11095361-when-should-i-use-web-search-extended-thinking-and-research", publisher: "Anthropic Support" },
+    { title: "Anthropic — Artifacts Overview", url: "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them", publisher: "Anthropic Support" },
+  ],
+  "how-to-speed-up-a-slow-windows-pc": [
+    { title: "Microsoft — Tips to Improve PC Performance in Windows", url: "https://support.microsoft.com/en-us/windows/experience/performance-optimization/tips-to-improve-pc-performance-in-windows", publisher: "Microsoft" },
+    { title: "Microsoft — Configure Startup Applications in Windows", url: "https://support.microsoft.com/en-US/Windows/Experience/Startup-Boot/configure-startup-applications-in-windows", publisher: "Microsoft" },
+    { title: "Microsoft — Manage Drive Space with Storage Sense", url: "https://support.microsoft.com/en-us/windows/experience/storage-filemanagement/manage-drive-space-with-storage-sense", publisher: "Microsoft" },
+    { title: "Microsoft — Defragment and Optimize Your Data Drives", url: "https://support.microsoft.com/en-us/windows/defragment-optimize-your-data-drives-in-windows-54d4fed1-c96e-46db-b843-8c6b34bd27a4", publisher: "Microsoft" },
+    { title: "Microsoft — Windows 10 Support Has Ended", url: "https://support.microsoft.com/en-us/windows/deployment/updates-lifecycle/windows-10-support-has-ended-on-october-14-2025", publisher: "Microsoft" },
+    { title: "Microsoft — How to Know It's Time for a New PC", url: "https://support.microsoft.com/en-us/windows/experience/compatibility/how-to-know-it-s-time-for-a-new-pc", publisher: "Microsoft" },
+  ],
   "best-free-coding-tools": [{ title: "Visual Studio Code documentation", url: "https://code.visualstudio.com/docs", publisher: "Microsoft" }, { title: "Client-side tooling overview", url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools/Overview", publisher: "MDN" }],
   "what-is-retrieval-augmented-generation": [{ title: "RAG and Generative AI", url: "https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview?tabs=docs", publisher: "Microsoft Learn" }],
   "how-to-protect-your-online-accounts": [{ title: "NIST Digital Identity Guidelines FAQ", url: "https://pages.nist.gov/800-63-FAQ/", publisher: "NIST" }, { title: "NIST SP 800-63B-4", url: "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b-4.pdf", publisher: "NIST" }],
@@ -409,12 +427,63 @@ const sourcesByArticle: Record<string, ArticleSource[]> = {
 };
 
 function getArticleBody(key: string): ArticleSection[] {
-  const baseBody = revisedArticleBodies[key] ?? articleBody[key as keyof typeof articleBody] ?? [];
+  const baseBody = remainingArticleBodies[key] ?? revisedArticleBodies[key] ?? articleBody[key as keyof typeof articleBody] ?? [];
   return [...baseBody, ...(editorialExpansions[key] ?? [])];
 }
 
 function getEditorialMetadata(slug: string) {
-  return { sources: sourcesByArticle[slug] ?? [], reviewStatus: "editorial-review-required" as const, substantialUpdatedAt: "2026-10-08" };
+  return { sources: remainingArticleSources[slug] ?? sourcesByArticle[slug] ?? [], reviewStatus: "editorial-review-required" as const, substantialUpdatedAt: "2026-10-09" };
+}
+
+type RemainingArticleManifestEntry = {
+  title: string;
+  excerpt: string;
+  seoTitle: string;
+  metaDescription: string;
+  tags: string[];
+  verifiedOn: string;
+  publicationStatus: "editorial-review-required";
+};
+
+const remainingArticleMetadata = remainingArticleManifest as Record<string, RemainingArticleManifestEntry>;
+
+function calculateReadingTime(body: ArticleSection[]): number {
+  const text = body
+    .flatMap((section) => [
+      section.heading,
+      ...(section.paragraphs ?? []),
+      ...(section.list ?? []),
+      ...(section.orderedList ?? []),
+      ...(section.table ? [...section.table.headers, ...section.table.rows.flat()] : []),
+      section.blockquote,
+      section.code,
+      ...(section.links?.map((link) => link.label) ?? []),
+    ])
+    .filter((value): value is string => Boolean(value))
+    .join(" ");
+
+  return Math.max(1, Math.ceil(text.trim().split(/\s+/).filter(Boolean).length / 200));
+}
+
+function applyArticleMetadata(article: Article): Article {
+  const metadata = remainingArticleMetadata[article.slug];
+
+  return {
+    ...article,
+    author: "TechPulseDaily Editorial Team",
+    readingTime: calculateReadingTime(article.body),
+    ...(metadata
+      ? {
+          title: metadata.title,
+          excerpt: metadata.excerpt,
+          seoTitle: metadata.seoTitle,
+          metaDescription: metadata.metaDescription,
+          tags: metadata.tags,
+          updatedAt: metadata.verifiedOn,
+          substantialUpdatedAt: metadata.verifiedOn,
+        }
+      : {}),
+  };
 }
 
 const allArticles: Article[] = [
@@ -427,7 +496,7 @@ const allArticles: Article[] = [
     category: "artificial-intelligence",
     tags: ["ai", "workflow", "small-business", "automation"],
     authorSlug: "maya-chen",
-    author: "TechLedger Editorial Team",
+    author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/ai-tools.jpg",
     featuredImageAlt: "A glowing digital interface representing artificial intelligence",
     publishedAt: "2026-10-09",
@@ -447,52 +516,53 @@ const allArticles: Article[] = [
   {
     id: "a2",
     slug: "chatgpt-vs-claude",
-    title: "ChatGPT vs Claude: Which AI Assistant Fits Your Work Best?",
+    title: "ChatGPT vs Claude: Which AI Assistant Should You Choose in 2026?",
     excerpt:
-      "A side-by-side look at where each assistant excels and what to evaluate before choosing one.",
+      "Compare ChatGPT and Claude across features, writing, coding, research, documents, pricing, privacy, and a fair evaluation process.",
     category: "artificial-intelligence",
     tags: ["chatgpt", "claude", "ai-assistants"],
     authorSlug: "maya-chen",
-    author: "TechLedger Editorial Team",
+    author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/chatgpt-claude.jpg",
     featuredImageAlt: "A person using a laptop for an AI-assisted video call",
     publishedAt: "2025-01-16",
-    updatedAt: "2026-10-08",
-    readingTime: 6,
-    seoTitle: "ChatGPT vs Claude: Which AI Assistant Fits Your Workflow?",
+    updatedAt: "2026-10-09",
+    readingTime: 12,
+    seoTitle: "ChatGPT vs Claude: Which AI Assistant Should You Choose in 2026?",
     metaDescription:
-      "Compare ChatGPT and Claude for writing, coding, and analysis to find the assistant that fits your work best.",
+      "Compare ChatGPT and Claude for writing, coding, research, document analysis, pricing, privacy, and real-world workflows in 2026.",
     canonicalUrl: "/article/chatgpt-vs-claude",
-    publicationStatus: "editorial-review-required",
+    publicationStatus: "published",
     featured: true,
     trending: true,
     body: getArticleBody("claude"),
     ...getEditorialMetadata("chatgpt-vs-claude"),
+    substantialUpdatedAt: "2026-10-09",
   },
   {
     id: "a3",
     slug: "how-to-speed-up-a-slow-windows-pc",
-    title: "How to Speed Up a Slow Windows PC",
+    title: "How to Speed Up a Slow Windows PC: 12 Proven Fixes (2026)",
     excerpt:
-      "These practical fixes help reclaim responsiveness without spending money on a new machine.",
+      "A practical, step-by-step guide to diagnosing and improving a slow Windows PC with built-in tools and safe maintenance steps.",
     category: "how-to",
     tags: ["windows", "pc-optimization", "performance"],
     authorSlug: "nolan-price",
-    author: "TechLedger Editorial Team",
+    author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/windows-speedup.jpg",
     featuredImageAlt: "A laptop computer on a clean desk",
-    publishedAt: "2025-02-04",
-    updatedAt: "2026-10-08",
-    readingTime: 5,
-    seoTitle: "How to Speed Up a Slow Windows PC Without Reinstalling",
+    updatedAt: "2026-10-09",
+    readingTime: 12,
+    seoTitle: "How to Speed Up a Slow Windows PC: 12 Proven Fixes (2026)",
     metaDescription:
-      "Learn the fastest, most effective ways to speed up a slow Windows PC and improve day-to-day responsiveness.",
+      "Learn 12 practical ways to speed up a slow Windows PC, from startup apps and storage to updates, malware checks, heat, and hardware upgrades.",
     canonicalUrl: "/article/how-to-speed-up-a-slow-windows-pc",
     publicationStatus: "editorial-review-required",
     featured: true,
     trending: true,
     body: getArticleBody("windows"),
     ...getEditorialMetadata("how-to-speed-up-a-slow-windows-pc"),
+    substantialUpdatedAt: "2026-10-09",
   },
   {
     id: "a4",
@@ -503,10 +573,9 @@ const allArticles: Article[] = [
     category: "programming",
     tags: ["developer-tools", "coding", "software"],
     authorSlug: "nolan-price",
-    author: "TechLedger Editorial Team",
+    author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/coding-tools.jpg",
     featuredImageAlt: "A developer working at a laptop in a bright workspace",
-    publishedAt: "2025-02-08",
     updatedAt: "2026-10-08",
     readingTime: 8,
     seoTitle: "Best Free Coding Tools for Developers in 2025",
@@ -528,10 +597,9 @@ const allArticles: Article[] = [
     category: "artificial-intelligence",
     tags: ["rag", "ai", "machine-learning"],
     authorSlug: "maya-chen",
-    author: "TechLedger Editorial Team",
+    author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/rag.jpg",
     featuredImageAlt: "A friendly humanoid robot representing AI knowledge retrieval",
-    publishedAt: "2025-02-03",
     updatedAt: "2026-10-08",
     readingTime: 7,
     seoTitle: "What Is Retrieval-Augmented Generation (RAG)?",
@@ -553,10 +621,9 @@ const allArticles: Article[] = [
     category: "cybersecurity",
     tags: ["security", "passwords", "privacy"],
     authorSlug: "sophia-rivera",
-    author: "TechLedger Editorial Team",
+    author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/account-security.jpg",
     featuredImageAlt: "A glowing digital lock symbol representing online security",
-    publishedAt: "2025-01-22",
     updatedAt: "2026-10-08",
     readingTime: 6,
     seoTitle: "How to Protect Your Online Accounts in 2025",
@@ -578,10 +645,9 @@ const allArticles: Article[] = [
     category: "programming",
     tags: ["vscode", "extensions", "developer-tools"],
     authorSlug: "nolan-price",
-    author: "TechLedger Editorial Team",
+    author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/vscode-extensions.jpg",
     featuredImageAlt: "A close-up of a circuit board with electronic components",
-    publishedAt: "2025-01-09",
     updatedAt: "2026-10-08",
     readingTime: 7,
     seoTitle: "Best VS Code Extensions for Developers in 2025",
@@ -603,10 +669,9 @@ const allArticles: Article[] = [
     category: "reviews",
     tags: ["hosting", "web-development", "websites"],
     authorSlug: "zoe-martin",
-    author: "TechLedger Editorial Team",
+    author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/hosting.jpg",
     featuredImageAlt: "A network server rack in a data center",
-    publishedAt: "2024-12-28",
     updatedAt: "2026-10-08",
     readingTime: 6,
     seoTitle: "How to Choose a Web Hosting Provider for Your Project",
@@ -628,10 +693,9 @@ const allArticles: Article[] = [
     category: "software",
     tags: ["productivity", "apps", "workflow"],
     authorSlug: "eli-hart",
-    author: "TechLedger Editorial Team",
+    author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/productivity-apps.jpg",
     featuredImageAlt: "A bright, collaborative modern office",
-    publishedAt: "2025-01-14",
     updatedAt: "2026-10-08",
     readingTime: 5,
     seoTitle: "Best Productivity Apps for Focused Work and Team Planning",
@@ -653,10 +717,9 @@ const allArticles: Article[] = [
     category: "programming",
     tags: ["api", "beginners", "backend"],
     authorSlug: "nolan-price",
-    author: "TechLedger Editorial Team",
+    author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/api-guide.jpg",
     featuredImageAlt: "A team discussing software projects around a table",
-    publishedAt: "2024-12-12",
     updatedAt: "2026-10-08",
     readingTime: 7,
     seoTitle: "Beginner's Guide to APIs for Web Development",
@@ -678,10 +741,9 @@ const allArticles: Article[] = [
     category: "software",
     tags: ["wordpress", "maintenance", "debugging"],
     authorSlug: "zoe-martin",
-    author: "TechLedger Editorial Team",
+    author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/wordpress-errors.jpg",
     featuredImageAlt: "A person reviewing website analytics on a laptop",
-    publishedAt: "2024-11-28",
     updatedAt: "2026-10-08",
     readingTime: 6,
     seoTitle: "Common WordPress Errors and Fixes for Site Owners",
@@ -703,10 +765,9 @@ const allArticles: Article[] = [
     category: "artificial-intelligence",
     tags: ["ai", "software-development", "engineering"],
     authorSlug: "eli-hart",
-    author: "TechLedger Editorial Team",
+    author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/ai-dev.jpg",
     featuredImageAlt: "A software team collaborating around a laptop",
-    publishedAt: "2025-02-14",
     updatedAt: "2026-10-08",
     readingTime: 8,
     seoTitle: "How AI Is Changing Software Development Right Now",
@@ -719,7 +780,7 @@ const allArticles: Article[] = [
     body: getArticleBody("aiSoftware"),
     ...getEditorialMetadata("how-ai-is-changing-software-development"),
   },
-];
+].map((article) => applyArticleMetadata(article as Article));
 
 /**
  * Local editorial preview only. This is evaluated on the server at build time;
@@ -734,7 +795,7 @@ export const authors = (isEditorialPreview ? allAuthors : allAuthors.filter((aut
 export const trendingArticles = articles.filter((article) => article.trending).slice(0, 6);
 export const featuredArticles = articles.filter((article) => article.featured).slice(0, 4);
 export const latestArticles = [...articles].sort((a, b) =>
-  new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  new Date(b.publishedAt ?? b.updatedAt).getTime() - new Date(a.publishedAt ?? a.updatedAt).getTime(),
 );
 
 export function getArticleBySlug(slug: string) {
@@ -801,3 +862,5 @@ export const siteNavigation = [
 ];
 import { authorProfiles, unverifiedAuthorProfile } from "@/lib/site-config";
 import { editorialExpansions, revisedArticleBodies } from "@/lib/article-content";
+import { remainingArticleBodies, remainingArticleSources } from "@/lib/remaining-article-bodies";
+import remainingArticleManifest from "@/lib/remaining-article-manifest.json";

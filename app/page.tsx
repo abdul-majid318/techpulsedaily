@@ -12,7 +12,7 @@ export default function HomePage() {
       <div className="mx-auto container px-4 py-16 sm:px-6 lg:px-8">
         <section className="rounded-[32px] border border-violet-100 bg-gradient-to-br from-white via-sky-50/60 to-violet-50/70 p-8 shadow-sm dark:border-slate-800 dark:from-slate-900 dark:via-slate-900 dark:to-violet-950/30 sm:p-12">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-violet-700 dark:text-violet-200">Editorial desk</p>
-          <h1 className="mt-3 max-w-2xl text-4xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-5xl">TechLedger is preparing its first reviewed stories.</h1>
+          <h1 className="mt-3 max-w-2xl text-4xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-5xl">TechPulseDaily is preparing its first reviewed stories.</h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">Articles are kept out of the public library until an accountable editor has completed factual and source review. Please check back after publication.</p>
         </section>
       </div>
@@ -76,10 +76,7 @@ export default function HomePage() {
               <div className="min-w-0 flex-1">
                 <div className="mb-1 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                   <span>{article.category.replace(/-/g, " ")}</span>
-                  <span>•</span>
-                  <time dateTime={article.publishedAt}>
-                    {new Date(article.publishedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
-                  </time>
+                  {article.publishedAt ? <><span>•</span><time dateTime={article.publishedAt}>{new Date(article.publishedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</time></> : null}
                 </div>
                 <Link href={`/article/${article.slug}`} className="block text-base font-medium text-slate-800 transition hover:text-slate-950 dark:text-slate-100 dark:hover:text-white">
                   {article.title}

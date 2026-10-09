@@ -1,0 +1,127 @@
+{
+  "best-free-coding-tools": {
+    "title": "10 Best Free Coding Tools for Developers in 2026",
+    "excerpt": "Compare ten useful free developer tools for editing, Git, APIs, databases, containers and CI/CD, including limits and practical examples.",
+    "seoTitle": "10 Best Free Coding Tools for Developers in 2026",
+    "metaDescription": "Compare ten useful free developer tools for editing, Git, APIs, databases, containers and CI/CD, including limits and practical examples.",
+    "tags": [
+      "developer-tools",
+      "free-tools",
+      "coding",
+      "2026"
+    ],
+    "verifiedOn": "2026-10-09",
+    "publicationStatus": "editorial-review-required"
+  },
+  "what-is-retrieval-augmented-generation": {
+    "title": "What Is Retrieval-Augmented Generation (RAG)? A Practical Guide",
+    "excerpt": "Learn how RAG works, from document ingestion and search to grounding, citations, evaluation, security and common failure modes.",
+    "seoTitle": "What Is Retrieval-Augmented Generation (RAG)? A Practical Guide",
+    "metaDescription": "Learn how RAG works, from document ingestion and search to grounding, citations, evaluation, security and common failure modes.",
+    "tags": [
+      "rag",
+      "retrieval",
+      "ai",
+      "search"
+    ],
+    "verifiedOn": "2026-10-09",
+    "publicationStatus": "editorial-review-required"
+  },
+  "how-to-protect-your-online-accounts": {
+    "title": "How to Protect Your Online Accounts: A Practical Security Checklist",
+    "excerpt": "Protect email, banking and social accounts with passkeys, unique passwords, MFA, phishing awareness and recovery preparation.",
+    "seoTitle": "How to Protect Your Online Accounts: A Practical Security Checklist",
+    "metaDescription": "Protect email, banking and social accounts with passkeys, unique passwords, MFA, phishing awareness and recovery preparation.",
+    "tags": [
+      "cybersecurity",
+      "mfa",
+      "passkeys",
+      "phishing"
+    ],
+    "verifiedOn": "2026-10-09",
+    "publicationStatus": "editorial-review-required"
+  },
+  "best-vscode-extensions-for-developers": {
+    "title": "Best VS Code Extensions for Developers in 2026: A Practical Shortlist",
+    "excerpt": "A focused guide to useful VS Code extensions for linting, formatting, Git, Python, containers and remote development.",
+    "seoTitle": "Best VS Code Extensions for Developers in 2026: A Practical Shortlist",
+    "metaDescription": "A focused guide to useful VS Code extensions for linting, formatting, Git, Python, containers and remote development.",
+    "tags": [
+      "vscode",
+      "extensions",
+      "developer-workflow"
+    ],
+    "verifiedOn": "2026-10-09",
+    "publicationStatus": "editorial-review-required"
+  },
+  "how-to-choose-a-web-hosting-provider": {
+    "title": "How to Choose a Web Hosting Provider: A Practical 2026 Checklist",
+    "excerpt": "Compare shared hosting, VPS, managed platforms and serverless deployment by performance, total cost, support, backups and security.",
+    "seoTitle": "How to Choose a Web Hosting Provider: A Practical 2026 Checklist",
+    "metaDescription": "Compare shared hosting, VPS, managed platforms and serverless deployment by performance, total cost, support, backups and security.",
+    "tags": [
+      "hosting",
+      "vps",
+      "performance",
+      "website"
+    ],
+    "verifiedOn": "2026-10-09",
+    "publicationStatus": "editorial-review-required"
+  },
+  "best-productivity-apps": {
+    "title": "Best Productivity Apps for Focused Work in 2026",
+    "excerpt": "A workflow-led comparison of tasks, notes, calendars and focus tools with guidance on selecting a simple productivity system.",
+    "seoTitle": "Best Productivity Apps for Focused Work in 2026",
+    "metaDescription": "A workflow-led comparison of tasks, notes, calendars and focus tools with guidance on selecting a simple productivity system.",
+    "tags": [
+      "productivity",
+      "tasks",
+      "focus",
+      "apps"
+    ],
+    "verifiedOn": "2026-10-09",
+    "publicationStatus": "editorial-review-required"
+  },
+  "beginners-guide-to-apis": {
+    "title": "Beginner's Guide to APIs: Requests, Responses, Auth and Examples",
+    "excerpt": "Understand APIs with practical HTTP examples, JSON, authentication, errors, rate limits, webhooks and safe first experiments.",
+    "seoTitle": "Beginner's Guide to APIs: Requests, Responses, Auth and Examples",
+    "metaDescription": "Understand APIs with practical HTTP examples, JSON, authentication, errors, rate limits, webhooks and safe first experiments.",
+    "tags": [
+      "api",
+      "rest",
+      "http",
+      "beginners"
+    ],
+    "verifiedOn": "2026-10-09",
+    "publicationStatus": "editorial-review-required"
+  },
+  "common-wordpress-errors-and-fixes": {
+    "title": "Common WordPress Errors and Fixes: A Safe Troubleshooting Guide",
+    "excerpt": "Fix common WordPress blank pages, plugin conflicts, update problems, database errors and slow loading with backups and logs.",
+    "seoTitle": "Common WordPress Errors and Fixes: A Safe Troubleshooting Guide",
+    "metaDescription": "Fix common WordPress blank pages, plugin conflicts, update problems, database errors and slow loading with backups and logs.",
+    "tags": [
+      "wordpress",
+      "troubleshooting",
+      "performance",
+      "plugins"
+    ],
+    "verifiedOn": "2026-10-09",
+    "publicationStatus": "editorial-review-required"
+  },
+  "how-ai-is-changing-software-development": {
+    "title": "How AI Is Changing Software Development in 2026",
+    "excerpt": "Explore how AI tools affect software delivery, testing, architecture, reviews, security and the developer skills that remain essential.",
+    "seoTitle": "How AI Is Changing Software Development in 2026",
+    "metaDescription": "Explore how AI tools affect software delivery, testing, architecture, reviews, security and the developer skills that remain essential.",
+    "tags": [
+      "ai",
+      "software-engineering",
+      "developer-tools",
+      "automation"
+    ],
+    "verifiedOn": "2026-10-09",
+    "publicationStatus": "editorial-review-required"
+  }
+}

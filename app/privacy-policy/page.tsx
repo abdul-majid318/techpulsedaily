@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Privacy Information",
-  description: "Current privacy information and the details TechLedger must verify before collecting personal data.",
+  description: "Current privacy information and the details TechPulseDaily must verify before collecting personal data.",
 };
 
 export default function PrivacyPolicyPage() {

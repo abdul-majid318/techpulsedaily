@@ -9,7 +9,7 @@ export async function GET() {
         <title><![CDATA[${article.title}]]></title>
         <link>${absoluteUrl(`/article/${article.slug}`)}</link>
         <guid>${absoluteUrl(`/article/${article.slug}`)}</guid>
-        <pubDate>${new Date(article.publishedAt).toUTCString()}</pubDate>
+        ${article.publishedAt ? `<pubDate>${new Date(article.publishedAt).toUTCString()}</pubDate>` : ""}
         <description><![CDATA[${article.excerpt}]]></description>
       </item>`,
     )

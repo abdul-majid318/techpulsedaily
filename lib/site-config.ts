@@ -29,7 +29,7 @@ function getBooleanValue(value: string | undefined) {
 }
 
 export const siteConfig = {
-  name: "TechLedger",
+  name: "TechPulseDaily",
   url: getSiteUrl(),
   publisherName: getOptionalValue(process.env.NEXT_PUBLIC_PUBLISHER_NAME),
   contactEmail: getOptionalValue(process.env.NEXT_PUBLIC_CONTACT_EMAIL),
@@ -51,9 +51,9 @@ export const authorProfiles = {
 } as const;
 
 export const unverifiedAuthorProfile = {
-  name: "TechLedger Editorial Team",
+  name: "TechPulseDaily Editorial Team",
   title: "Contributor information pending verification",
-  bio: "This byline is associated with TechLedger editorial content. Individual contributor details will be published only after the publisher has verified them.",
+  bio: "This byline is associated with TechPulseDaily editorial content. Individual contributor details will be published only after the publisher has verified them.",
 };
 
 export const hasConfiguredSiteUrl = siteConfig.url !== "https://techledger.example";

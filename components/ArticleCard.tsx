@@ -28,8 +28,7 @@ export function ArticleCard({ article, featured = false }: { article: Article; f
         <div className="mt-5 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
           <div className="flex items-center gap-2">
             <span className="font-medium text-slate-700 dark:text-slate-200">{article.author}</span>
-            <span>•</span>
-            <span>{new Date(article.publishedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
+            {article.publishedAt ? <><span>•</span><span>{new Date(article.publishedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span></> : null}
           </div>
           <span>{article.readingTime} min read</span>
         </div>

@@ -6,7 +6,7 @@ import { latestArticles } from "@/lib/articles";
 
 export const metadata: Metadata = {
   title: "Latest Articles",
-  description: "Browse the latest technology news, practical guides, reviews, and AI insights from TechLedger.",
+  description: "Browse the latest technology news, practical guides, reviews, and AI insights from TechPulseDaily.",
 };
 
 const perPage = 6;

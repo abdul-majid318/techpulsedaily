@@ -8,7 +8,7 @@ export function Newsletter() {
         Newsletter subscriptions are not open yet.
       </h3>
       <p className="mt-4 max-w-xl text-sm leading-6 text-slate-600 dark:text-slate-300">
-        TechLedger is not collecting email addresses until a subscription service and its privacy process are in place.
+        TechPulseDaily is not collecting email addresses until a subscription service and its privacy process are in place.
       </p>
     </section>
   );

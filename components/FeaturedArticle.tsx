@@ -32,8 +32,7 @@ export function FeaturedArticle({ article }: { article: Article }) {
           <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">{article.excerpt}</p>
           <div className="mt-5 flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
             <span className="font-medium text-slate-700 dark:text-slate-200">{article.author}</span>
-            <span>•</span>
-            <span>{new Date(article.publishedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
+            {article.publishedAt ? <><span>•</span><span>{new Date(article.publishedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span></> : null}
             <span>•</span>
             <span>{article.readingTime} min read</span>
           </div>

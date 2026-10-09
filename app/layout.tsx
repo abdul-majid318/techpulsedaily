@@ -15,8 +15,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "TechLedger | Technology news, AI, software, and practical guides",
-    template: "%s | TechLedger",
+    default: "TechPulseDaily | Technology news, AI, software, and practical guides",
+    template: "%s | TechPulseDaily",
   },
   description:
     "Technology news, practical AI guidance, software reviews, cybersecurity insights, and step-by-step how-to articles for curious readers.",
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "TechLedger",
+    title: "TechPulseDaily",
     description: "Technology news and practical digital guidance for modern readers.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "TechLedger",
+    title: "TechPulseDaily",
     description: "Technology news and practical digital guidance for modern readers.",
   },
 };
