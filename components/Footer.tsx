@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { categories } from "@/lib/articles";
 
@@ -10,7 +11,7 @@ export function Footer() {
     <footer className="mt-16 border-t border-violet-100 bg-gradient-to-b from-white/60 to-violet-50/80 dark:border-slate-800 dark:from-slate-950 dark:to-violet-950/20">
       <div className="mx-auto container px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
-          <div className="lg:col-span-2"><Link href="/" className="flex items-center gap-3 text-lg font-semibold text-slate-900 dark:text-white"><span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 via-fuchsia-500 to-orange-400 text-sm font-bold text-white shadow-md shadow-violet-500/20">T</span>TechPulseDaily</Link><p className="mt-4 max-w-sm text-sm leading-6 text-slate-600 dark:text-slate-300">A digital publication for readers seeking practical technology context and clearer guidance.</p></div>
+          <div className="lg:col-span-2"><Link href="/" aria-label="TechPulseDaily home" className="inline-flex rounded-md bg-white/90 px-2 py-1 dark:bg-white"><Image src="/logo.png" alt="TechPulseDaily" width={2172} height={724} className="h-auto w-48" /></Link><p className="mt-4 max-w-sm text-sm leading-6 text-slate-600 dark:text-slate-300">A digital publication for readers seeking practical technology context and clearer guidance.</p></div>
           <FooterLinkGroup title="Categories" links={categories.map((category) => ({ label: category.shortName, href: `/category/${category.slug}` }))} />
           <FooterLinkGroup title="Company" links={companyLinks} />
           <FooterLinkGroup title="Legal" links={legalLinks} />

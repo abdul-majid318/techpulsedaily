@@ -155,7 +155,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           />
         </div>
 
-        <div className="mt-10 grid gap-8 xl:grid-cols-[220px_minmax(0,1fr)_290px]">
+        <div className="mt-10 grid gap-8 xl:grid-cols-[340px_minmax(0,1fr)_340px]">
           <div className="xl:sticky xl:top-28 xl:self-start">
             <TableOfContents items={toc} />
           </div>
@@ -233,7 +233,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
           <aside className="space-y-6 xl:sticky xl:top-28 xl:self-start">
             <PopularPosts articles={getMostPopularArticles()} />
-            <Newsletter />
+            {/* <Newsletter /> */}
           </aside>
         </div>
       </article>

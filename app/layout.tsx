@@ -33,6 +33,11 @@ export const metadata: Metadata = {
     title: "TechPulseDaily",
     description: "Technology news and practical digital guidance for modern readers.",
   },
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png" }],
+    shortcut: ["/favicon.png"],
+    apple: [{ url: "/favicon.png", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

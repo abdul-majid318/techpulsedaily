@@ -100,7 +100,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-      <div className="mb-14 grid gap-8 lg:grid-cols-2">
+      {/* <div className="mb-14 grid gap-8 lg:grid-cols-2">
 
         <aside className="space-y-6">
           <div className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
@@ -109,7 +109,7 @@ export default function HomePage() {
           </div>
         </aside>
         <Newsletter />
-      </div>
+      </div> */}
       <div className="mb-14">
         <div className="grid lg:grid-cols-2 gap-8">
           {sectionGroups.map((group) => {
