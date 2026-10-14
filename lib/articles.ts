@@ -490,34 +490,34 @@ function applyArticleMetadata(article: Article): Article {
 
 const usaArticles: Article[] = [
   {
-    id: "us1", slug: "how-to-spot-fake-delivery-text-messages", title: "Fake USPS, UPS, and FedEx Texts: How to Spot Delivery Scams", excerpt: "Learn how to recognize fake package delivery texts in the US, check shipment claims safely, and respond if you clicked a suspicious link.", category: "cybersecurity", tags: ["smishing", "delivery-scams", "usps", "online-safety"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/how-to-spot-fake-delivery-text-messages.webp", featuredImageAlt: "Person using a smartphone to check a message", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "Fake USPS, UPS, and FedEx Texts: How to Spot Delivery Scams", metaDescription: "Learn how to recognize fake package delivery texts in the US, check shipment claims safely, and respond if you clicked a suspicious link.", canonicalUrl: "/article/how-to-spot-fake-delivery-text-messages", publicationStatus: "published", publishedAt: "2026-10-14", featured: false, trending: false, body: usaArticleBodies.us1, sources: usaArticleSources["how-to-spot-fake-delivery-text-messages"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
+    id: "us1", slug: "how-to-spot-fake-delivery-text-messages", title: "Fake USPS, UPS, and FedEx Texts: How to Spot Delivery Scams", excerpt: "Learn how to recognize fake package delivery texts in the US, check shipment claims safely, and respond if you clicked a suspicious link.", category: "cybersecurity", tags: ["smishing", "delivery-scams", "usps", "online-safety"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/how-to-spot-fake-delivery-text-messages.webp", featuredImageAlt: "Person using a smartphone to check a message", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "Fake USPS, UPS, and FedEx Texts: How to Spot Delivery Scams", metaDescription: "Learn how to recognize fake package delivery texts in the US, check shipment claims safely, and respond if you clicked a suspicious link.", canonicalUrl: "/article/how-to-spot-fake-delivery-text-messages", publicationStatus: "published", publishedAt: "2026-10-02", featured: false, trending: false, body: usaArticleBodies.us1, sources: usaArticleSources["how-to-spot-fake-delivery-text-messages"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
   },
   {
-    id: "us2", slug: "how-to-freeze-credit-for-free-in-the-us", title: "How to Freeze Your Credit for Free at All Three Bureaus", excerpt: "Step-by-step guide to free credit freezes with Equifax, Experian, and TransUnion, plus how to lift a freeze when applying for credit.", category: "cybersecurity", tags: ["credit-freeze", "identity-theft", "us-finance", "consumer-protection"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/how-to-freeze-credit-for-free-in-the-us.webp", featuredImageAlt: "Combination lock securing credit cards beside a keyboard", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "How to Freeze Your Credit for Free at All Three Bureaus", metaDescription: "Step-by-step guide to free credit freezes with Equifax, Experian, and TransUnion, plus how to lift a freeze when applying for credit.", canonicalUrl: "/article/how-to-freeze-credit-for-free-in-the-us", publicationStatus: "published", publishedAt: "2026-10-14", featured: false, trending: false, body: usaArticleBodies.us2, sources: usaArticleSources["how-to-freeze-credit-for-free-in-the-us"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
+    id: "us2", slug: "how-to-freeze-credit-for-free-in-the-us", title: "How to Freeze Your Credit for Free at All Three Bureaus", excerpt: "Step-by-step guide to free credit freezes with Equifax, Experian, and TransUnion, plus how to lift a freeze when applying for credit.", category: "cybersecurity", tags: ["credit-freeze", "identity-theft", "us-finance", "consumer-protection"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/how-to-freeze-credit-for-free-in-the-us.webp", featuredImageAlt: "Combination lock securing credit cards beside a keyboard", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "How to Freeze Your Credit for Free at All Three Bureaus", metaDescription: "Step-by-step guide to free credit freezes with Equifax, Experian, and TransUnion, plus how to lift a freeze when applying for credit.", canonicalUrl: "/article/how-to-freeze-credit-for-free-in-the-us", publicationStatus: "published", publishedAt: "2026-10-03", featured: false, trending: false, body: usaArticleBodies.us2, sources: usaArticleSources["how-to-freeze-credit-for-free-in-the-us"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
   },
   {
-    id: "us3", slug: "irs-identity-protection-pin-guide", title: "IRS Identity Protection PIN: What It Is and How to Get One", excerpt: "Understand the free IRS IP PIN, who can request it, how to retrieve a new PIN each year, and what to do if you lose it.", category: "how-to", tags: ["irs", "ip-pin", "tax-identity-theft", "usa"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/irs-identity-protection-pin-guide.webp", featuredImageAlt: "Hands reviewing tax forms with a calculator and laptop", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "IRS Identity Protection PIN: What It Is and How to Get One", metaDescription: "Understand the free IRS IP PIN, who can request it, how to retrieve a new PIN each year, and what to do if you lose it.", canonicalUrl: "/article/irs-identity-protection-pin-guide", publicationStatus: "published", publishedAt: "2026-10-14", featured: false, trending: false, body: usaArticleBodies.us3, sources: usaArticleSources["irs-identity-protection-pin-guide"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
+    id: "us3", slug: "irs-identity-protection-pin-guide", title: "IRS Identity Protection PIN: What It Is and How to Get One", excerpt: "Understand the free IRS IP PIN, who can request it, how to retrieve a new PIN each year, and what to do if you lose it.", category: "how-to", tags: ["irs", "ip-pin", "tax-identity-theft", "usa"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/irs-identity-protection-pin-guide.webp", featuredImageAlt: "Hands reviewing tax forms with a calculator and laptop", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "IRS Identity Protection PIN: What It Is and How to Get One", metaDescription: "Understand the free IRS IP PIN, who can request it, how to retrieve a new PIN each year, and what to do if you lose it.", canonicalUrl: "/article/irs-identity-protection-pin-guide", publicationStatus: "published", publishedAt: "2026-10-04", featured: false, trending: false, body: usaArticleBodies.us3, sources: usaArticleSources["irs-identity-protection-pin-guide"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
   },
   {
-    id: "us4", slug: "how-to-secure-home-wifi-router", title: "How to Secure Your Home Wi-Fi Router: 10 Practical Settings", excerpt: "A practical checklist for securing home Wi-Fi in the US, including WPA3, passwords, guest networks, updates, and connected devices.", category: "how-to", tags: ["wifi-security", "router", "smart-home", "cybersecurity"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/how-to-secure-home-wifi-router.webp", featuredImageAlt: "Wireless router on a wooden desk with connected cables", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "How to Secure Your Home Wi-Fi Router: 10 Practical Settings", metaDescription: "A practical checklist for securing home Wi-Fi in the US, including WPA3, passwords, guest networks, updates, and connected devices.", canonicalUrl: "/article/how-to-secure-home-wifi-router", publicationStatus: "published", publishedAt: "2026-10-14", featured: false, trending: false, body: usaArticleBodies.us4, sources: usaArticleSources["how-to-secure-home-wifi-router"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
+    id: "us4", slug: "how-to-secure-home-wifi-router", title: "How to Secure Your Home Wi-Fi Router: 10 Practical Settings", excerpt: "A practical checklist for securing home Wi-Fi in the US, including WPA3, passwords, guest networks, updates, and connected devices.", category: "how-to", tags: ["wifi-security", "router", "smart-home", "cybersecurity"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/how-to-secure-home-wifi-router.webp", featuredImageAlt: "Wireless router on a wooden desk with connected cables", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "How to Secure Your Home Wi-Fi Router: 10 Practical Settings", metaDescription: "A practical checklist for securing home Wi-Fi in the US, including WPA3, passwords, guest networks, updates, and connected devices.", canonicalUrl: "/article/how-to-secure-home-wifi-router", publicationStatus: "published", publishedAt: "2026-10-04", featured: false, trending: false, body: usaArticleBodies.us4, sources: usaArticleSources["how-to-secure-home-wifi-router"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
   },
   {
-    id: "us5", slug: "iphone-privacy-checkup-guide", title: "iPhone Privacy Checkup: Review Location, Photos, and App Access", excerpt: "Step-by-step iPhone privacy review for location sharing, app permissions, Apple Account security, and Safety Check.", category: "how-to", tags: ["iphone", "privacy", "apple", "location-sharing"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/iphone-privacy-checkup-guide.webp", featuredImageAlt: "Person using an iPhone while working at a desk", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "iPhone Privacy Checkup: Review Location, Photos, and App Access", metaDescription: "Step-by-step iPhone privacy review for location sharing, app permissions, Apple Account security, and Safety Check.", canonicalUrl: "/article/iphone-privacy-checkup-guide", publicationStatus: "published", publishedAt: "2026-10-14", featured: false, trending: false, body: usaArticleBodies.us5, sources: usaArticleSources["iphone-privacy-checkup-guide"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
+    id: "us5", slug: "iphone-privacy-checkup-guide", title: "iPhone Privacy Checkup: Review Location, Photos, and App Access", excerpt: "Step-by-step iPhone privacy review for location sharing, app permissions, Apple Account security, and Safety Check.", category: "how-to", tags: ["iphone", "privacy", "apple", "location-sharing"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/iphone-privacy-checkup-guide.webp", featuredImageAlt: "Person using an iPhone while working at a desk", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "iPhone Privacy Checkup: Review Location, Photos, and App Access", metaDescription: "Step-by-step iPhone privacy review for location sharing, app permissions, Apple Account security, and Safety Check.", canonicalUrl: "/article/iphone-privacy-checkup-guide", publicationStatus: "published", publishedAt: "2026-10-06", featured: false, trending: false, body: usaArticleBodies.us5, sources: usaArticleSources["iphone-privacy-checkup-guide"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
   },
   {
-    id: "us6", slug: "how-to-back-up-windows-11-pc", title: "How to Back Up a Windows 11 PC Before Something Goes Wrong", excerpt: "Learn a practical Windows 11 backup plan for files, cloud sync, external drives, recovery, and restoring a sample file.", category: "how-to", tags: ["windows-11", "backup", "data-recovery", "pc"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/how-to-back-up-windows-11-pc.webp", featuredImageAlt: "Person holding an external SSD in front of a laptop", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "How to Back Up a Windows 11 PC Before Something Goes Wrong", metaDescription: "Learn a practical Windows 11 backup plan for files, cloud sync, external drives, recovery, and restoring a sample file.", canonicalUrl: "/article/how-to-back-up-windows-11-pc", publicationStatus: "published", publishedAt: "2026-10-14", featured: false, trending: false, body: usaArticleBodies.us6, sources: usaArticleSources["how-to-back-up-windows-11-pc"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
+    id: "us6", slug: "how-to-back-up-windows-11-pc", title: "How to Back Up a Windows 11 PC Before Something Goes Wrong", excerpt: "Learn a practical Windows 11 backup plan for files, cloud sync, external drives, recovery, and restoring a sample file.", category: "how-to", tags: ["windows-11", "backup", "data-recovery", "pc"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/how-to-back-up-windows-11-pc.webp", featuredImageAlt: "Person holding an external SSD in front of a laptop", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "How to Back Up a Windows 11 PC Before Something Goes Wrong", metaDescription: "Learn a practical Windows 11 backup plan for files, cloud sync, external drives, recovery, and restoring a sample file.", canonicalUrl: "/article/how-to-back-up-windows-11-pc", publicationStatus: "published", publishedAt: "2026-10-07", featured: false, trending: false, body: usaArticleBodies.us6, sources: usaArticleSources["how-to-back-up-windows-11-pc"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
   },
   {
-    id: "us7", slug: "qr-code-scams-parking-restaurants", title: "QR Code Scams at Parking Meters and Restaurants: Safety Guide", excerpt: "Learn to identify malicious QR-code stickers and fake payment pages at US parking meters, restaurants, and public places.", category: "cybersecurity", tags: ["qr-code-scams", "parking", "phishing", "ftc"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/qr-code-scams-parking-restaurants.webp", featuredImageAlt: "Smartphone displaying a QR code", updatedAt: "2026-10-11", readingTime: 3, seoTitle: "QR Code Scams at Parking Meters and Restaurants: Safety Guide", metaDescription: "Learn to identify malicious QR-code stickers and fake payment pages at US parking meters, restaurants, and public places.", canonicalUrl: "/article/qr-code-scams-parking-restaurants", publicationStatus: "published", publishedAt: "2026-10-14", featured: false, trending: false, body: usaArticleBodies.us7, sources: usaArticleSources["qr-code-scams-parking-restaurants"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
+    id: "us7", slug: "qr-code-scams-parking-restaurants", title: "QR Code Scams at Parking Meters and Restaurants: Safety Guide", excerpt: "Learn to identify malicious QR-code stickers and fake payment pages at US parking meters, restaurants, and public places.", category: "cybersecurity", tags: ["qr-code-scams", "parking", "phishing", "ftc"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/qr-code-scams-parking-restaurants.webp", featuredImageAlt: "Smartphone displaying a QR code", updatedAt: "2026-10-11", readingTime: 3, seoTitle: "QR Code Scams at Parking Meters and Restaurants: Safety Guide", metaDescription: "Learn to identify malicious QR-code stickers and fake payment pages at US parking meters, restaurants, and public places.", canonicalUrl: "/article/qr-code-scams-parking-restaurants", publicationStatus: "published", publishedAt: "2026-10-03", featured: false, trending: false, body: usaArticleBodies.us7, sources: usaArticleSources["qr-code-scams-parking-restaurants"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
   },
   {
-    id: "us8", slug: "is-public-wifi-safe-travel-guide", title: "Is Public Wi-Fi Safe? Practical Tips for Airports, Hotels, and Cafes", excerpt: "Learn when public Wi-Fi is reasonably safe, what HTTPS protects, how to avoid fake hotspots, and when to use cellular data.", category: "cybersecurity", tags: ["public-wifi", "travel-tech", "https", "privacy"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/is-public-wifi-safe-travel-guide.webp", featuredImageAlt: "Traveler working on a laptop by an airport window", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "Is Public Wi-Fi Safe? Practical Tips for Airports, Hotels, and Cafes", metaDescription: "Learn when public Wi-Fi is reasonably safe, what HTTPS protects, how to avoid fake hotspots, and when to use cellular data.", canonicalUrl: "/article/is-public-wifi-safe-travel-guide", publicationStatus: "published", publishedAt: "2026-10-14", featured: false, trending: false, body: usaArticleBodies.us8, sources: usaArticleSources["is-public-wifi-safe-travel-guide"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
+    id: "us8", slug: "is-public-wifi-safe-travel-guide", title: "Is Public Wi-Fi Safe? Practical Tips for Airports, Hotels, and Cafes", excerpt: "Learn when public Wi-Fi is reasonably safe, what HTTPS protects, how to avoid fake hotspots, and when to use cellular data.", category: "cybersecurity", tags: ["public-wifi", "travel-tech", "https", "privacy"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/is-public-wifi-safe-travel-guide.webp", featuredImageAlt: "Traveler working on a laptop by an airport window", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "Is Public Wi-Fi Safe? Practical Tips for Airports, Hotels, and Cafes", metaDescription: "Learn when public Wi-Fi is reasonably safe, what HTTPS protects, how to avoid fake hotspots, and when to use cellular data.", canonicalUrl: "/article/is-public-wifi-safe-travel-guide", publicationStatus: "published", publishedAt: "2026-10-13", featured: false, trending: false, body: usaArticleBodies.us8, sources: usaArticleSources["is-public-wifi-safe-travel-guide"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
   },
   {
-    id: "us9", slug: "what-to-do-after-identity-theft-us", title: "Identity Theft in the US: What to Do in the First 24 Hours", excerpt: "A practical US recovery checklist for suspected identity theft: protect accounts, report fraud, freeze credit, and document the incident.", category: "cybersecurity", tags: ["identity-theft", "credit-freeze", "fraud-recovery", "ftc"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/what-to-do-after-identity-theft-us.webp", featuredImageAlt: "Pickpocket taking a wallet from a shopper's bag", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "Identity Theft in the US: What to Do in the First 24 Hours", metaDescription: "A practical US recovery checklist for suspected identity theft: protect accounts, report fraud, freeze credit, and document the incident.", canonicalUrl: "/article/what-to-do-after-identity-theft-us", publicationStatus: "published", publishedAt: "2026-10-14", featured: false, trending: false, body: usaArticleBodies.us9, sources: usaArticleSources["what-to-do-after-identity-theft-us"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
+    id: "us9", slug: "what-to-do-after-identity-theft-us", title: "Identity Theft in the US: What to Do in the First 24 Hours", excerpt: "A practical US recovery checklist for suspected identity theft: protect accounts, report fraud, freeze credit, and document the incident.", category: "cybersecurity", tags: ["identity-theft", "credit-freeze", "fraud-recovery", "ftc"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/what-to-do-after-identity-theft-us.webp", featuredImageAlt: "Pickpocket taking a wallet from a shopper's bag", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "Identity Theft in the US: What to Do in the First 24 Hours", metaDescription: "A practical US recovery checklist for suspected identity theft: protect accounts, report fraud, freeze credit, and document the incident.", canonicalUrl: "/article/what-to-do-after-identity-theft-us", publicationStatus: "published", publishedAt: "2026-09-29", featured: false, trending: false, body: usaArticleBodies.us9, sources: usaArticleSources["what-to-do-after-identity-theft-us"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
   },
   {
-    id: "us10", slug: "ai-voice-cloning-scams-family", title: "AI Voice Cloning Scams: How to Verify an Emergency Call", excerpt: "Understand AI-assisted voice impersonation scams and set up a family verification plan before an urgent call arrives.", category: "cybersecurity", tags: ["ai-scams", "voice-cloning", "family-safety", "fraud"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/ai-voice-cloning-scams-family.webp", featuredImageAlt: "Person speaking on a smartphone", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "AI Voice Cloning Scams: How to Verify an Emergency Call", metaDescription: "Understand AI-assisted voice impersonation scams and set up a family verification plan before an urgent call arrives.", canonicalUrl: "/article/ai-voice-cloning-scams-family", publicationStatus: "published", publishedAt: "2026-10-14", featured: false, trending: false, body: usaArticleBodies.us10, sources: usaArticleSources["ai-voice-cloning-scams-family"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
+    id: "us10", slug: "ai-voice-cloning-scams-family", title: "AI Voice Cloning Scams: How to Verify an Emergency Call", excerpt: "Understand AI-assisted voice impersonation scams and set up a family verification plan before an urgent call arrives.", category: "cybersecurity", tags: ["ai-scams", "voice-cloning", "family-safety", "fraud"], authorSlug: "zoe-martin", author: "TechPulseDaily Editorial Team", featuredImage: "/images/usa/ai-voice-cloning-scams-family.webp", featuredImageAlt: "Person speaking on a smartphone", updatedAt: "2026-10-11", readingTime: 4, seoTitle: "AI Voice Cloning Scams: How to Verify an Emergency Call", metaDescription: "Understand AI-assisted voice impersonation scams and set up a family verification plan before an urgent call arrives.", canonicalUrl: "/article/ai-voice-cloning-scams-family", publicationStatus: "published", publishedAt: "2026-09-28", featured: false, trending: false, body: usaArticleBodies.us10, sources: usaArticleSources["ai-voice-cloning-scams-family"], reviewStatus: "editorial-review-required", substantialUpdatedAt: "2026-10-11",
   },
 ];
 
@@ -560,7 +560,7 @@ const allArticles: Article[] = [
     author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/photos/chatgpt-vs-claude.jpg",
     featuredImageAlt: "A person using a laptop to compare digital work tools",
-    publishedAt: "2025-01-16",
+    publishedAt: "2026-10-09",
     updatedAt: "2026-10-09",
     readingTime: 12,
     seoTitle: "ChatGPT vs Claude: Which AI Assistant Should You Choose in 2026?",
@@ -586,8 +586,8 @@ const allArticles: Article[] = [
     author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/photos/how-to-speed-up-a-slow-windows-pc.jpg",
     featuredImageAlt: "A computer keyboard, mouse, and calendar on a clean desk",
-    publishedAt: "2026-10-09",
-    updatedAt: "2026-10-09",
+    publishedAt: "2026-10-10",
+    updatedAt: "2026-10-10",
     readingTime: 12,
     seoTitle: "How to Speed Up a Slow Windows PC: 12 Proven Fixes (2026)",
     metaDescription:
@@ -598,7 +598,7 @@ const allArticles: Article[] = [
     trending: true,
     body: getArticleBody("windows"),
     ...getEditorialMetadata("how-to-speed-up-a-slow-windows-pc"),
-    substantialUpdatedAt: "2026-10-09",
+    substantialUpdatedAt: "2026-10-10",
   },
   {
     id: "a4",
@@ -613,7 +613,7 @@ const allArticles: Article[] = [
     featuredImage: "/images/photos/best-free-coding-tools.jpg",
     featuredImageAlt: "Close-up photograph of a computer keyboard",
     publishedAt: "2026-10-09",
-    updatedAt: "2026-10-08",
+    updatedAt: "2026-10-10",
     readingTime: 8,
     seoTitle: "Best Free Coding Tools for Developers in 2025",
     metaDescription:
@@ -637,8 +637,8 @@ const allArticles: Article[] = [
     author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/photos/what-is-retrieval-augmented-generation.jpg",
     featuredImageAlt: "Close-up of electronic components on a circuit board",
-    publishedAt: "2026-10-09",
-    updatedAt: "2026-10-08",
+    publishedAt: "2026-10-11",
+    updatedAt: "2026-10-11",
     readingTime: 7,
     seoTitle: "What Is Retrieval-Augmented Generation (RAG)?",
     metaDescription:
@@ -662,8 +662,8 @@ const allArticles: Article[] = [
     author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/photos/how-to-protect-your-online-accounts.jpg",
     featuredImageAlt: "A combination padlock resting on a computer keyboard",
-    publishedAt: "2026-10-09",
-    updatedAt: "2026-10-08",
+    publishedAt: "2026-10-11",
+    updatedAt: "2026-10-11",
     readingTime: 6,
     seoTitle: "How to Protect Your Online Accounts in 2025",
     metaDescription:
@@ -687,8 +687,8 @@ const allArticles: Article[] = [
     author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/photos/best-vscode-extensions-for-developers.jpg",
     featuredImageAlt: "Hands typing at a workstation with code displayed on a monitor",
-    publishedAt: "2026-10-09",
-    updatedAt: "2026-10-08",
+    publishedAt: "2026-10-11",
+    updatedAt: "2026-10-11",
     readingTime: 7,
     seoTitle: "Best VS Code Extensions for Developers in 2025",
     metaDescription:
@@ -712,8 +712,8 @@ const allArticles: Article[] = [
     author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/photos/how-to-choose-a-web-hosting-provider.jpg",
     featuredImageAlt: "Network hardware in a data-center rack",
-    publishedAt: "2026-10-09",
-    updatedAt: "2026-10-08",
+    publishedAt: "2026-10-12",
+    updatedAt: "2026-10-12",
     readingTime: 6,
     seoTitle: "How to Choose a Web Hosting Provider for Your Project",
     metaDescription:
@@ -738,7 +738,7 @@ const allArticles: Article[] = [
     featuredImage: "/images/photos/best-productivity-apps.jpg",
     featuredImageAlt: "A focused desk with a notebook, laptop, and candle",
     publishedAt: "2026-10-09",
-    updatedAt: "2026-10-08",
+    updatedAt: "2026-10-12",
     readingTime: 5,
     seoTitle: "Best Productivity Apps for Focused Work and Team Planning",
     metaDescription:
@@ -762,8 +762,8 @@ const allArticles: Article[] = [
     author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/photos/beginners-guide-to-apis.jpg",
     featuredImageAlt: "Close-up photograph of code displayed on a computer screen",
-    publishedAt: "2026-10-09",
-    updatedAt: "2026-10-08",
+    publishedAt: "2026-10-11",
+    updatedAt: "2026-10-13",
     readingTime: 7,
     seoTitle: "Beginner's Guide to APIs for Web Development",
     metaDescription:
@@ -787,8 +787,8 @@ const allArticles: Article[] = [
     author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/photos/common-wordpress-errors-and-fixes.jpg",
     featuredImageAlt: "Hands typing on a laptop during website maintenance",
-    publishedAt: "2026-10-09",
-    updatedAt: "2026-10-08",
+    publishedAt: "2026-10-13",
+    updatedAt: "2026-10-13",
     readingTime: 6,
     seoTitle: "Common WordPress Errors and Fixes for Site Owners",
     metaDescription:
@@ -812,8 +812,8 @@ const allArticles: Article[] = [
     author: "TechPulseDaily Editorial Team",
     featuredImage: "/images/photos/how-ai-is-changing-software-development.jpg",
     featuredImageAlt: "Hands using a laptop during software development work",
-    publishedAt: "2026-10-09",
-    updatedAt: "2026-10-08",
+    publishedAt: "2026-10-01",
+    updatedAt: "2026-10-03",
     readingTime: 8,
     seoTitle: "How AI Is Changing Software Development Right Now",
     metaDescription:
