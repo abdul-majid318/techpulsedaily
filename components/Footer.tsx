@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { categories } from "@/lib/articles";
+import { siteConfig } from "@/lib/site-config";
 
 const companyLinks = [{ label: "About", href: "/about" }, { label: "Contact", href: "/contact" }, { label: "Editorial Policy", href: "/editorial-policy" }];
 const legalLinks = [{ label: "Privacy Information", href: "/privacy-policy" }, { label: "Terms of Use", href: "/terms" }, { label: "Disclaimer", href: "/disclaimer" }];
@@ -11,7 +12,7 @@ export function Footer() {
     <footer className="mt-16 border-t border-violet-100 bg-gradient-to-b from-white/60 to-violet-50/80 dark:border-slate-800 dark:from-slate-950 dark:to-violet-950/20">
       <div className="mx-auto container px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
-          <div className="lg:col-span-2"><Link href="/" aria-label="TechPulseDaily home" className="inline-flex"><Image src="/logo-dark.png" alt="TechPulseDaily" width={2172} height={724} className="h-auto w-48 dark:hidden" /><Image src="/logo-light.png" alt="" width={2172} height={724} className="hidden h-auto w-48 dark:block" /></Link><p className="mt-4 max-w-sm text-sm leading-6 text-slate-600 dark:text-slate-300">A digital publication for readers seeking practical technology context and clearer guidance.</p></div>
+          <div className="lg:col-span-2"><Link href="/" aria-label="TechPulseDaily home" className="inline-flex"><Image src="/logo-dark.png" alt="TechPulseDaily" width={2172} height={724} className="h-auto w-48 dark:hidden" /><Image src="/logo-light.png" alt="" width={2172} height={724} className="hidden h-auto w-48 dark:block" /></Link><p className="mt-4 max-w-sm text-sm leading-6 text-slate-600 dark:text-slate-300">A digital publication for readers seeking practical technology context and clearer guidance.</p><a href={`mailto:${siteConfig.contactEmail}`} className="mt-4 inline-block text-sm font-medium text-violet-700 underline underline-offset-4 dark:text-violet-300">{siteConfig.contactEmail}</a></div>
           <FooterLinkGroup title="Categories" links={categories.map((category) => ({ label: category.shortName, href: `/category/${category.slug}` }))} />
           <FooterLinkGroup title="Company" links={companyLinks} />
           <FooterLinkGroup title="Legal" links={legalLinks} />

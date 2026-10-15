@@ -32,7 +32,7 @@ export const siteConfig = {
   name: "TechPulseDaily",
   url: getSiteUrl(),
   publisherName: getOptionalValue(process.env.NEXT_PUBLIC_PUBLISHER_NAME),
-  contactEmail: getOptionalValue(process.env.NEXT_PUBLIC_CONTACT_EMAIL),
+  contactEmail: "contact@techpulsedaily.store",
   optionalCookiesEnabled: getBooleanValue(process.env.NEXT_PUBLIC_OPTIONAL_COOKIES_ENABLED),
   adPlacementsEnabled: getBooleanValue(process.env.NEXT_PUBLIC_AD_PLACEMENTS_ENABLED),
 };
