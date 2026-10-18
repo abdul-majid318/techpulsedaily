@@ -56,7 +56,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
-          <ConsentManager enabled={siteConfig.optionalCookiesEnabled} />
+          <ConsentManager enabled={process.env.NODE_ENV === "production" || siteConfig.optionalCookiesEnabled} />
         </div>
       </body>
     </html>
